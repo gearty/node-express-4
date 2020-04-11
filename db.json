@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "picture": "https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover/28544335-dzhen-sinsero-130283-ni-sy-vostochnaya-mudrost-kotoraya-glasit-bud-uveren.jpg",
+      "name": "Ни Сы",
+      "author": "Джен Синсеро",
+      "isAvailable": true
+    },
+    {
+      "id": 2,
+      "picture": "https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover/28544335-dzhen-sinsero-130283-ni-sy-vostochnaya-mudrost-kotoraya-glasit-bud-uveren.jpg",
+      "name": "Ни Сы",
+      "author": "Джен Синсеро",
+      "isAvailable": true
+    },
+    {
+      "id": 3,
+      "picture": "https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover/28544335-dzhen-sinsero-130283-ni-sy-vostochnaya-mudrost-kotoraya-glasit-bud-uveren.jpg",
+      "name": "Ни Сы",
+      "author": "Джен Синсеро",
+      "isAvailable": true
+    }
+  ]
+}

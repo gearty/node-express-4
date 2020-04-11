@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Создть книгу
+    link(rel='stylesheet', href='/public/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style.
+        div.container {text-align: center;}
+        div.form-group {margin-top: 10px;}
+        button.btn {margin: 20px}
+        label {display: block}
+
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Редактирование книги
+
+        // register form
+        form(method='POST' action='/editBook')
+          input(type="hidden" name="id" value=`${book.id}`)
+          div.form-group
+            label(for='name') Название
+            input#name.form-control(type='text' placeholder='название книги' name='name' value=`${book.name}`)
+          div.form-group
+            label(for='author') Автор
+            input#author.form-control(type='text' placeholder='автор книги' name='author' value=`${book.author}`)
+          div.form-group
+            label(for='picture') Фото
+            input#picture.form-control(type='text', placeholder='url' name='picture' value=`${book.picture}`)
+          button.btn.btn-primary(type='submit') Сохранить

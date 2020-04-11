@@ -1,7 +1,19 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Моя библиотека
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css')
+    style.
+      table.ui.celled img { display: inline-block; }
+      footer { margin: 35px 0 15px 0; text-align: center }
+
   body
-    block content
+    main#main
+    h1.ui.center.aligned.header Моя библиотека
+    .ui.container
+
+      block content
+
+    block footer
+      footer
+        p © #{new Date().getFullYear()} Моя библиотека
