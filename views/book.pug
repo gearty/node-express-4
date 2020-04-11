@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    title Книга
+    link(rel='stylesheet', href='/public/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style.
+      img.book-image { width: 25%;}
+      div.book {display: flex; margin: 25px}
+      div.book-details {margin-left: 40px}
+      div.actions {margin-top: 30px}
+      button.delete-btn {color: orangered; margin-top: 20px}
+      div.form-container {margin-top: 50px}
+      button.edit-btn {color: #00B7FF; margin-top: 20px}
+
+block content
+  div.book
+    img.book-image(src=book.picture)
+    div.book-details
+      h1.book-name
+        | #{book.name}
+      h2.book-author
+        | #{book.author}
+      div.actions
+      if book.isAvailable
+        p.label
+          | Книга находится в библиотеке
+      else
+        p.label
+          | Книга выдана
+      div.form-container
+        form(method='POST' action='/changeBookStatus')
+          input(type="hidden" name="id" value=`${book.id}`)
+          input(type="hidden" name="isAvailable" value=`${!book.isAvailable}`)
+          button.btn(type='submit')
+            if book.isAvailable
+                | Выдать книгу
+            else
+                | Вернуть книгу
+
+        form(method='GET' action=`/editBook`)
+          input(type="hidden" name="id" value=`${book.id}`)
+          button.edit-btn(type='submit') Редактировать книгу
+
+        form(method='POST' action='/deleteBook')
+          input(type="hidden" name="id" value=`${book.id}`)
+          button.delete-btn(type='submit') Удалить книгу

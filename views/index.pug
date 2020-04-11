@@ -1,5 +1,30 @@
-extends layout
+extends layout.pug
 
 block content
-  h1= title
-  p Welcome to #{title}
+  table.ui.celled.table.center.aligned
+    thead
+      tr
+        th Фото
+        th Название
+        th Автор
+        th В наличии
+        th Детали
+    tbody
+      each book in books
+        div(href=`/book?id=${book.id}`)
+          tr
+            td
+              img.ui.mini.rounded.image(src=book.picture)
+            td #{book.name}
+            td #{book.author}
+            if book.isAvailable
+              td Да
+            else
+              td Нет
+            td
+              a.button(href=`/book?id=${book.id}`)
+                | Посмотреть детали
+    tfoot
+      tr
+        th(colspan='6')
+          a.button(href=`/createBook`) Создать книгу
